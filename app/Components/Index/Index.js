@@ -43,7 +43,6 @@ export default class HomeScreen extends Component {
 
 				<Button style={styles.footerButton}
 				        onPress={this.goToLoginPage}
-				        //onPress={() => navigate('Login')}
 				        title="Show the fun"
 				        color="#841584"
 				        accessibilityLabel="Learn more about this purple button"
@@ -73,6 +72,10 @@ const styles = StyleSheet.create({
 		// color: '#333333',
 		color: '#fff',
 		marginBottom: 5,
+	},
+	footerButton: {
+		width:150,
+		marginTop: 20
 	},
 });
 
