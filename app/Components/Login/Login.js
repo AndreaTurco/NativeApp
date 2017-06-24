@@ -17,7 +17,7 @@ import {
 	Button
 } from 'react-native';
 
-export default class HomeScreen extends Component {
+export default class LoginScreen extends Component {
 	_onPressButton(){
 		if(Platform.OS === 'android') {
 			ToastAndroid.showWithGravity('All Your Base Are Belong To Us', ToastAndroid.SHORT, ToastAndroid.BOTTOM)
@@ -26,25 +26,12 @@ export default class HomeScreen extends Component {
 		}
 	}
 
-	goToLoginPage = () => {
-		this.props.navigation.navigate('Login');
-	};
-
 	render() {
 		return (
 			<View style={styles.container}>
-				<TouchableWithoutFeedback onPress={this._onPressButton}>
-					<View>
-						<Text style={styles.welcome}>
-							We Love It
-						</Text>
-					</View>
-				</TouchableWithoutFeedback>
-
 				<Button style={styles.footerButton}
-				        onPress={this.goToLoginPage}
-				        //onPress={() => navigate('Login')}
-				        title="Show the fun"
+				        onPress={this._onPressButton}
+				        title="Login"
 				        color="#841584"
 				        accessibilityLabel="Learn more about this purple button"
 				/>
@@ -76,4 +63,4 @@ const styles = StyleSheet.create({
 	},
 });
 
-AppRegistry.registerComponent('HomeScreen', () => HomeScreen);
+AppRegistry.registerComponent('LoginScreen', () => LoginScreen);

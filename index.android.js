@@ -6,15 +6,15 @@
 
 import React, {Component} from 'react';
 import Index from './app/Components/Index/Index';
+import {Stack} from './app/Config/Route';
 import {
 	AppRegistry,
 } from 'react-native';
 
 export default class NativeApp extends Component {
-
 	render() {
 		return (
-			<Index/>
+			<Stack/>
 		);
 	}
 }
