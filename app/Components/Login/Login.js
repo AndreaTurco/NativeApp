@@ -14,7 +14,8 @@ import {
 	Alert,
 	ToastAndroid,
 	Platform,
-	Button
+	Button,
+	TextInput
 } from 'react-native';
 
 export default class LoginScreen extends Component {
@@ -26,9 +27,32 @@ export default class LoginScreen extends Component {
 		}
 	}
 
+	constructor(props){
+		super(props);
+		this.state = {
+			username : "",
+			password : ""
+		};
+	}
+
 	render() {
 		return (
 			<View style={styles.container}>
+				<Text style={styles.welcome}>Login</Text>
+				<TextInput
+					style={{height: 40}}
+					placeholder="Username"
+					name="username"
+					type="text"
+					onChangeText={(text) => this.setState({text})}
+				/>
+				<TextInput
+					style={{height: 40}}
+					placeholder="Password"
+					name="password"
+					type="text"
+					onChangeText={(text) => this.setState({text})}
+				/>
 				<Button style={styles.footerButton}
 				        onPress={this._onPressButton}
 				        title="Login"

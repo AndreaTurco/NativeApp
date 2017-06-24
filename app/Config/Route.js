@@ -25,4 +25,31 @@ export const Stack = StackNavigator({
 			title: 'Join Your Friends',
 		},
 	}
-},{ headerMode: 'none' });
+}
+// ,{ headerMode: 'none' }
+);
+
+/**
+ *
+ export const Stack_2 = StackNavigator({
+	Login : {
+		screen : LoginScreen,
+		navigationOptions: {
+			title: 'Join Your Friends',
+		},
+	}
+});
+
+ export const Stack = StackNavigator({
+	Home : {
+		screen : HomeScreen
+	},
+	Stack_2 : {
+		screen : Stack_2
+	},
+
+}
+ ,{ headerMode: 'none' }
+ );
+
+ */
