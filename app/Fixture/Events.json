@@ -1,0 +1,58 @@
+{
+	"Events": [
+		{
+			"name": "TommyVee at Uno",
+			"date": "19/07/2017",
+			"description": "!st european date",
+			"city": "Ta Qali",
+			"country": "Malta",
+			"address": "Ta Qali Craft Village",
+			"favorites": "0",
+			"joined": "0",
+			"location": "Uno",
+			"manager": "Tommaso",
+			"imgUrl" : "",
+			"videoUrl" : "",
+			"uploaded": "15/06/2017",
+			"updated": "15/06/2017",
+			"status": "1",
+			"artists": [
+				{
+					"name": "TommyVee",
+					"role": "dj",
+					"links": "TommyVee.com"
+				},
+				{
+					"name": "Gaty",
+					"role": "Vocalist",
+					"links": "gaty.com"
+				}
+			]
+		},
+		{
+			"name": "Christian Marchi at Uno",
+			"date": "12/07/2017",
+			"description": "!st european date",
+			"city": "Ta Qali",
+			"country": "Malta",
+			"address": "Ta Qali Craft Village",
+			"favorites": "0",
+			"joined": "0",
+			"location": "Uno",
+			"manager": "Tommaso",
+			"imgUrl" : "",
+			"videoUrl" : "",
+			"uploaded": "15/06/2017",
+			"updated": "15/06/2017",
+			"status": "1",
+			"artists": [
+				{
+					"name": "Christian Marchi ",
+					"role": "dj",
+					"links": "ChristianMarchi .com"
+				}
+			]
+		}
+	]
+}
+

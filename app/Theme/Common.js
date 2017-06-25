@@ -16,7 +16,10 @@ const CommonTheme = StyleSheet.create({
 	footerText:{
 		fontSize: 18,
 		color: '#4a148c'
-	}
+	},
+	yellowButton: {
+		backgroundColor: '#bcff00',
+	},
 });
 
 export default CommonTheme;
