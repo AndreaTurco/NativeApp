@@ -4,6 +4,7 @@ import {StackNavigator} from 'react-navigation';
 
 import HomeScreen from '../Components/Index/Index';
 import LoginScreen from '../Components/Login/Login';
+import EventScreen from '../Components/Event/Event';
 
 /*export const Tabs = TabNavigator({
  Feed: {
@@ -15,6 +16,13 @@ import LoginScreen from '../Components/Login/Login';
  });*/
 
 export const Stack = StackNavigator({
+
+		Event: {
+			screen: EventScreen,
+			navigationOptions: {
+				title: 'WeLoveIt',
+			},
+		},
 		Home: {
 			screen: HomeScreen,
 			navigationOptions: {

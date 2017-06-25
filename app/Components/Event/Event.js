@@ -1,9 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, {Component} from 'react';
 import {
 	AppRegistry,
@@ -19,7 +13,7 @@ import {
 import Button from 'apsl-react-native-button';
 import CommonTheme from '../../Theme/Common';
 
-export default class LoginScreen extends Component {
+export default class EventScreen extends Component {
 	_onPressButton() {
 		if (Platform.OS === 'android') {
 			ToastAndroid.showWithGravity('All Your Base Are Belong To Us', ToastAndroid.SHORT, ToastAndroid.BOTTOM)
@@ -27,10 +21,6 @@ export default class LoginScreen extends Component {
 			Alert.alert("go to login page")
 		}
 	}
-
-	loginUser = () => {
-		this.props.navigation.navigate('Event');
-	};
 
 	constructor(props) {
 		super(props);
@@ -65,7 +55,7 @@ export default class LoginScreen extends Component {
 				<View style={styles.footer}>
 					<View>
 						<Button
-							onPress={this.loginUser}
+							onPress={this._onPressButton}
 							style={CommonTheme.footerButton}
 							textStyle={CommonTheme.footerText}>
 							Show the fun
@@ -109,4 +99,4 @@ const styles = StyleSheet.create({
 	}
 });
 
-AppRegistry.registerComponent('LoginScreen', () => LoginScreen);
+AppRegistry.registerComponent('EventScreen', () => EventScreen);

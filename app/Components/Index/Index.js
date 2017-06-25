@@ -13,9 +13,10 @@ import {
 	TouchableWithoutFeedback,
 	Alert,
 	ToastAndroid,
-	Platform,
-	Button
+	Platform
 } from 'react-native';
+import Button from 'apsl-react-native-button';
+import CommonTheme from '../../Theme/Common';
 
 export default class HomeScreen extends Component {
 	_onPressButton(){
@@ -32,7 +33,7 @@ export default class HomeScreen extends Component {
 
 	render() {
 		return (
-			<View style={styles.container}>
+			<View style={CommonTheme.container}>
 				<TouchableWithoutFeedback onPress={this._onPressButton}>
 					<View>
 						<Text style={styles.welcome}>
@@ -41,25 +42,19 @@ export default class HomeScreen extends Component {
 					</View>
 				</TouchableWithoutFeedback>
 
-				<Button style={styles.footerButton}
-				        onPress={this.goToLoginPage}
-				        title="Show the fun"
-				        color="#841584"
-				        accessibilityLabel="Learn more about this purple button"
-				/>
+				<Button
+					onPress={this.goToLoginPage}
+					style={CommonTheme.footerButton}
+					textStyle={CommonTheme.footerText}>
+					Start the tour
+				</Button>
+
 			</View>
 		);
 	}
 }
 
 const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		// flexDirection : 'column',
-		justifyContent: 'center',
-		alignItems: 'center',
-		backgroundColor: '#8d1296',
-	},
 	welcome: {
 		fontSize: 48,
 		textAlign: 'center',
@@ -72,10 +67,6 @@ const styles = StyleSheet.create({
 		// color: '#333333',
 		color: '#fff',
 		marginBottom: 5,
-	},
-	footerButton: {
-		width:150,
-		marginTop: 20
 	},
 });
 
