@@ -22,10 +22,19 @@ export default class EventScreen extends Component {
 		}
 	}
 
+	handleEvent = () => {
+
+	};
+
+	nextEvent = () => {
+		let index = this.state.eventShowed++;
+		this.props.navigation.navigate('Event', {indexEventToShow: index});
+	};
+
 	constructor(props) {
 		super(props);
 		this.state = {
-			eventShowed: 0,
+			eventShowed: props.navigation.state.params.indexEventToShow || 0,
 		};
 
 		const _eventData = require('../../Fixture/Events.json');
@@ -75,7 +84,7 @@ export default class EventScreen extends Component {
 							Book Event
 						</Button>
 						<Button
-							onPress={this._onPressButton}
+							onPress={this.nextEvent}
 							style={[CommonTheme.footerButton, styles.footerEventButton]}
 							textStyle={CommonTheme.footerText}>
 							Go To Next event

@@ -16,13 +16,6 @@ import EventScreen from '../Components/Event/Event';
  });*/
 
 export const Stack = StackNavigator({
-
-		Event: {
-			screen: EventScreen,
-			navigationOptions: {
-				title: 'WeLoveIt',
-			},
-		},
 		Home: {
 			screen: HomeScreen,
 			navigationOptions: {
@@ -33,6 +26,12 @@ export const Stack = StackNavigator({
 			screen: LoginScreen,
 			navigationOptions: {
 				title: 'Join Your Friends',
+			},
+		},
+		Event: {
+			screen: EventScreen,
+			navigationOptions: {
+				title: 'WeLoveIt',
 			},
 		},
 	}
