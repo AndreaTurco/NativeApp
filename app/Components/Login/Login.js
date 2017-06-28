@@ -14,7 +14,8 @@ import {
 	Alert,
 	ToastAndroid,
 	Platform,
-	TextInput
+	TextInput,
+	KeyboardAvoidingView
 } from 'react-native';
 import Button from 'apsl-react-native-button';
 import CommonTheme from '../../Theme/Common';
@@ -42,7 +43,7 @@ export default class LoginScreen extends Component {
 
 	render() {
 		return (
-			<View style={CommonTheme.container}>
+			<KeyboardAvoidingView behavior="padding" style={CommonTheme.container}>
 				<View style={styles.header}>
 					<Text style={styles.welcome}>Login</Text>
 				</View>
@@ -50,8 +51,14 @@ export default class LoginScreen extends Component {
 					<TextInput
 						style={styles.input}
 						placeholder="Username"
+						placeholderTextColor="rgba(255,255,255,0.7)"
 						name="username"
+						returnKeyType="next"
 						type="text"
+						onsubmitediting={() => this.passwordInput.focus()}
+						keyboardType="email-address"
+						autocapitalize="none"
+						autocorrect={false}
 						onChangeText={(text) => this.setState({text})}
 					/>
 					<TextInput
@@ -59,7 +66,10 @@ export default class LoginScreen extends Component {
 						placeholder="Password"
 						name="password"
 						type="text"
+						returnKeyType="go"
+						secureTextEntry
 						onChangeText={(text) => this.setState({text})}
+					  ref={(input) => this.passwordInput = input}
 					/>
 				</View>
 				<View style={styles.footer}>
@@ -72,7 +82,7 @@ export default class LoginScreen extends Component {
 						</Button>
 					</View>
 				</View>
-			</View>
+			</KeyboardAvoidingView>
 		);
 	}
 }
@@ -106,6 +116,8 @@ const styles = StyleSheet.create({
 		textAlign: 'center',
 		color: '#fff',
 		marginBottom: 25,
+		paddingHorizontal: 5,
+		backgroundColor: rgba(255,255,255,0.2),
 	}
 });
 
