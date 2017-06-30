@@ -33,29 +33,33 @@ export default class EventScreen extends Component {
 
 	constructor(props) {
 		super(props);
-		this.state = {
-			eventShowed: props.navigation.state.params.indexEventToShow || 0,
-		};
-
+/*		this.state = {
+			eventShowed: props.navigation.state.params.indexEventToShow ,
+		};*/
 		const _eventData = require('../../Fixture/Events.json');
 		const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
 		this.state = {
 			dataSource: ds.cloneWithRows(_eventData),
+			_index : typeof props.navigation.state.params !== 'undefined' ? props.navigation.state.params.indexEventToShow : 0
 		};
 	}
 
+
 	renderRow(rowData) {
+		const _indexEvent = this.state._index;
 		return (
 			<View style={styles.eventDetails}>
-				<Text style={styles.boldEventName}>{rowData[0].name}</Text>
-				<Text style={styles.eventDescription}>{rowData[0].description}</Text>
-				<Text style={styles.eventDescription}>{rowData[0].date} - {rowData[0].location}</Text>
-				<Text style={styles.eventDescription}>{rowData[0].country} - {rowData[0].city}</Text>
+				<Text style={styles.boldEventName}>{rowData[_indexEvent].name}</Text>
+				<Text style={styles.eventDescription}>{rowData[_indexEvent].description}</Text>
+				<Text style={styles.eventDescription}>{rowData[_indexEvent].date} - {rowData[_indexEvent].location}</Text>
+				<Text style={styles.eventDescription}>{rowData[_indexEvent].country} - {rowData[_indexEvent].city}</Text>
 			</View>
 		)
 	}
 
 	render() {
+		// const index = this.props.navigation.state.params.indexEventToShow || 0;
+
 		return (
 			<View style={CommonTheme.container}>
 				{/*immagine principale*/}
@@ -71,7 +75,7 @@ export default class EventScreen extends Component {
 				<View style={styles.inputContainer}>
 					<ListView
 						dataSource={this.state.dataSource}
-						renderRow={this.renderRow}
+						renderRow={this.renderRow.bind(this)}
 					/>
 				</View>
 				{/*wrapper tasti*/}
