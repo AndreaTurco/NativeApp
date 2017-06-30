@@ -27,7 +27,7 @@ export default class EventScreen extends Component {
 	};
 
 	nextEvent = () => {
-		let index = this.state.eventShowed++;
+		let index = this.state._index + 1;
 		this.props.navigation.navigate('Event', {indexEventToShow: index});
 	};
 
@@ -46,7 +46,7 @@ export default class EventScreen extends Component {
 
 
 	renderRow(rowData) {
-		const _indexEvent = this.state._index;
+		const _indexEvent = this.state._index >= rowData.length ? rowData.length - 1 : this.state._index;
 		return (
 			<View style={styles.eventDetails}>
 				<Text style={styles.boldEventName}>{rowData[_indexEvent].name}</Text>
