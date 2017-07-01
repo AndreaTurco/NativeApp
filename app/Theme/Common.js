@@ -5,20 +5,25 @@ const CommonTheme = StyleSheet.create({
 		flex: 1,
 		justifyContent: 'center',
 		alignItems: 'center',
-		backgroundColor: '#6031b1',
+		backgroundColor: '#424242',
+		// backgroundColor: '#707070',
+		// backgroundColor: '#6031b1',
 	},
 	footerButton: {
-		backgroundColor: '#f3e5f5',
+		backgroundColor: '#cfcfcf',
+		// backgroundColor: '#f3e5f5',
 		width: 150,
 		marginTop: 20,
 		alignSelf : 'center',
 	},
 	footerText:{
 		fontSize: 18,
-		color: '#4a148c'
+		color: '#000'
+		// color: '#4a148c'
 	},
 	yellowButton: {
-		backgroundColor: '#bcff00',
+		backgroundColor: '#b0ff57',
+		// backgroundColor: '#bcff00',
 	},
 });
 

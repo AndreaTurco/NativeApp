@@ -56,9 +56,6 @@ export default class EventScreen extends Component {
 					<View style={styles.roundWrapper}>
 						<Image
 							style={styles.imageWrapper}
-							// source={rowData[_indexEvent].imgUrl}
-							// source={require('../../Resources/1.jpg')}
-							// source={{uri : _url}}
 							source={fullImage}
 						/>
 					</View>
@@ -76,8 +73,6 @@ export default class EventScreen extends Component {
 
 		return (
 			<View style={CommonTheme.container}>
-				{/*immagine principale*/}
-
 				{/*info evento*/}
 				<View style={styles.mainSection}>
 					<ListView
@@ -111,9 +106,10 @@ const styles = StyleSheet.create({
 		header: {
 			flex: 2,
 			justifyContent: 'center',
+			marginBottom: 20,
 		},
 		mainSection: {
-			flex: 3,
+			flex: 5,
 			justifyContent: 'center',
 			alignSelf: 'stretch',
 		},
@@ -128,12 +124,12 @@ const styles = StyleSheet.create({
 		},
 		boldEventName: {
 			fontWeight: 'bold',
-			color: '#fff',
+			// color: '#fff',
 			fontSize: 30,
 			justifyContent: 'center',
 			textAlign: 'center',
 			marginBottom: 15,
-
+			color: '#ccff90'
 		},
 		eventDescription: {
 			color: '#fff',
@@ -143,9 +139,11 @@ const styles = StyleSheet.create({
 			marginBottom: 8,
 		},
 		imageWrapper: {
-			height: 200,
-			borderRadius: 100,
-			width: 200
+			height: 250,
+			borderRadius: 150,
+			width: 250,
+			borderWidth: 1,
+			borderColor: '#76ff03'
 		},
 		footerButtonContainer: {
 			flexDirection: 'row',
