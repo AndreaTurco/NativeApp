@@ -47,8 +47,22 @@ export default class EventScreen extends Component {
 
 	renderRow(rowData) {
 		const _indexEvent = this.state._index >= rowData.length ? rowData.length - 1 : this.state._index;
+		let fullImage = {uri: rowData[_indexEvent].imgUrl};
+		// const _url = require("'"+rowData[_indexEvent].imgUrl+"'");
 		return (
+
 			<View style={styles.eventDetails}>
+				<View style={styles.header}>
+					<View style={styles.roundWrapper}>
+						<Image
+							style={styles.imageWrapper}
+							// source={rowData[_indexEvent].imgUrl}
+							// source={require('../../Resources/1.jpg')}
+							// source={{uri : _url}}
+							source={fullImage}
+						/>
+					</View>
+				</View>
 				<Text style={styles.boldEventName}>{rowData[_indexEvent].name}</Text>
 				<Text style={styles.eventDescription}>{rowData[_indexEvent].description}</Text>
 				<Text style={styles.eventDescription}>{rowData[_indexEvent].date} - {rowData[_indexEvent].location}</Text>
@@ -63,16 +77,9 @@ export default class EventScreen extends Component {
 		return (
 			<View style={CommonTheme.container}>
 				{/*immagine principale*/}
-				<View style={styles.header}>
-					<View style={styles.roundWrapper}>
-						<Image
-							style={styles.imageWrapper}
-							source={require('../../Resources/1.jpg')}
-						/>
-					</View>
-				</View>
+
 				{/*info evento*/}
-				<View style={styles.inputContainer}>
+				<View style={styles.mainSection}>
 					<ListView
 						dataSource={this.state.dataSource}
 						renderRow={this.renderRow.bind(this)}
@@ -105,8 +112,8 @@ const styles = StyleSheet.create({
 			flex: 2,
 			justifyContent: 'center',
 		},
-		inputContainer: {
-			flex: 2,
+		mainSection: {
+			flex: 3,
 			justifyContent: 'center',
 			alignSelf: 'stretch',
 		},
@@ -116,7 +123,8 @@ const styles = StyleSheet.create({
 		},
 		eventDetails: {
 			justifyContent: 'center',
-			alignItems: 'center'
+			alignItems: 'center',
+			marginTop: 25
 		},
 		boldEventName: {
 			fontWeight: 'bold',
