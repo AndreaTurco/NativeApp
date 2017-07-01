@@ -1,32 +1,36 @@
 import React from 'react';
-import {StackNavigator} from 'react-navigation';
+import {StackNavigator,TabNavigator} from 'react-navigation';
+import {Button} from 'react-native';
 // import { Icon } from 'react-native-elements';
 
 import HomeScreen from '../Components/Index/Index';
 import LoginScreen from '../Components/Login/Login';
 import EventScreen from '../Components/Event/Event';
-
-/*export const Tabs = TabNavigator({
- Feed: {
- screen: Feed,
- },
- Me: {
- screen: Me,
- },
- });*/
-
+import HandleEventScreen from '../Components/HandleEvent/HandleEvent';
+/*
+export const TabNav = TabNavigator({
+	Event: {
+		screen: EventScreen,
+		navigationOptions: {
+			title: 'WeLoveIt',
+			headerTintColor: '#ccff90',
+			headerStyle: {
+				backgroundColor : '#424242'
+			},
+			// headerRight: <Button title="Info" />,
+		},
+	},
+});*/
 export const Stack = StackNavigator({
 
-		Event: {
-			screen: EventScreen,
+		HandleEvent: {
+			screen: HandleEventScreen,
 			navigationOptions: {
-				title: 'WeLoveIt',
-			},
-		},
-		Login: {
-			screen: LoginScreen,
-			navigationOptions: {
-				title: 'Join Your Friends',
+				title: 'WeLoveIt - Handle the fun',
+				headerTintColor: '#ccff90',
+				headerStyle: {
+					backgroundColor : '#424242',
+				},
 			},
 		},
 		Home: {
@@ -35,9 +39,36 @@ export const Stack = StackNavigator({
 				header: null
 			}
 		},
-
-
+		Login: {
+			screen: LoginScreen,
+			navigationOptions: {
+				title: 'Join Your Friends',
+				headerTintColor: '#ccff90',
+				headerStyle: {
+					backgroundColor : '#424242'
+				}
+			},
+		},
+/*		Event: {
+			screen : TabNav
+		}*/
+		Event: {
+			screen: EventScreen,
+			navigationOptions: {
+				title: 'WeLoveIt',
+				headerTintColor: '#ccff90',
+				headerStyle: {
+					backgroundColor : '#424242'
+				},
+				// headerRight: <Button title="Info" />,
+			},
+		},
 	}
-	, {headerMode: 'screen'}
+	,
+	{
+		headerMode: 'screen',
+	}
 );
+
+
 
