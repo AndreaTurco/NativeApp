@@ -3,10 +3,11 @@ import {StackNavigator,TabNavigator} from 'react-navigation';
 import {Button} from 'react-native';
 // import { Icon } from 'react-native-elements';
 
-import HomeScreen from '../Components/Index/Index';
-import LoginScreen from '../Components/Login/Login';
-import EventScreen from '../Components/Event/Event';
-import HandleEventScreen from '../Components/HandleEvent/HandleEvent';
+import HomeScreen         from '../Components/Index/Index';
+import LoginScreen        from '../Components/Login/Login';
+import EventScreen        from '../Components/Event/Event';
+import HandleEventScreen  from '../Components/HandleEvent/HandleEvent';
+import MainGroupScreen    from '../Components/SocialGroup/MainPage';
 /*
 export const TabNav = TabNavigator({
 	Event: {
@@ -23,6 +24,16 @@ export const TabNav = TabNavigator({
 });*/
 export const Stack = StackNavigator({
 
+		MainGroupPage: {
+			screen: MainGroupScreen,
+			navigationOptions: {
+				title: 'WeLoveIt - Be Social',
+				headerTintColor: '#ccff90',
+				headerStyle: {
+					backgroundColor : '#424242',
+				},
+			},
+		},
 		Home: {
 			screen: HomeScreen,
 			navigationOptions: {

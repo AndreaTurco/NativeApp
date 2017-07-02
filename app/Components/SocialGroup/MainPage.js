@@ -10,10 +10,10 @@ import {
 	ListView
 } from 'react-native';
 import Button from 'apsl-react-native-button';
-import HandleEventStyle from './Style';
+import MainGroupStyle from './Style';
 import CommonTheme from '../../Theme/Common';
 
-export default class HandleEventScreen extends Component {
+export default class MainGroupScreen extends Component {
 	_onPressButton() {
 		if (Platform.OS === 'android') {
 			ToastAndroid.showWithGravity('All Your Base Are Belong To Us', ToastAndroid.SHORT, ToastAndroid.BOTTOM)
@@ -24,9 +24,6 @@ export default class HandleEventScreen extends Component {
 
 	constructor(props) {
 		super(props);
-		/*		this.state = {
-		 eventShowed: props.navigation.state.params.indexEventToShow ,
-		 };*/
 		const _eventData = require('../../Fixture/Events.json');
 		const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
 		this.state = {
@@ -42,20 +39,17 @@ export default class HandleEventScreen extends Component {
 		// const _url = require("'"+rowData[_indexEvent].imgUrl+"'");
 		return (
 
-			<View style={HandleEventStyle.eventDetails}>
-				<View style={HandleEventStyle.header}>
-					<View style={HandleEventStyle.roundWrapper}>
+			<View style={MainGroupStyle.eventDetails}>
+				<View style={MainGroupStyle.header}>
+					<View style={MainGroupStyle.roundWrapper}>
 						<Image
-							style={HandleEventStyle.imageWrapper}
+							style={MainGroupStyle.imageWrapper}
 							source={fullImage}
 						/>
 					</View>
-					<View style={HandleEventStyle.event_description}>
-						<Text style={HandleEventStyle.boldEventName}>{rowData[_indexEvent].name}</Text>
-						<Text style={HandleEventStyle.eventDescription}>{rowData[_indexEvent].description}</Text>
-						<Text style={HandleEventStyle.eventDescription}>{rowData[_indexEvent].date}
-							- {rowData[_indexEvent].location}</Text>
-						<Text style={HandleEventStyle.eventDescription}>{rowData[_indexEvent].country}
+					<View style={MainGroupStyle.event_description}>
+						<Text style={MainGroupStyle.boldEventName}>{rowData[_indexEvent].name}</Text>
+						<Text style={MainGroupStyle.eventDescription}>{rowData[_indexEvent].country}
 							- {rowData[_indexEvent].city}</Text>
 					</View>
 				</View>
@@ -65,43 +59,48 @@ export default class HandleEventScreen extends Component {
 
 	render() {
 		// const index = this.props.navigation.state.params.indexEventToShow || 0;
-
 		return (
 			<View style={CommonTheme.container}>
 				{/*info evento*/}
-				<View style={HandleEventStyle.mainSection}>
+				<View style={MainGroupStyle.mainSection}>
 					<ListView
 						dataSource={this.state.dataSource}
 						renderRow={this.renderRow.bind(this)}
 					/>
 				</View>
 				{/*wrapper tasti*/}
-				<View style={HandleEventStyle.footer}>
+				<View style={MainGroupStyle.footer}>
+					<View style={MainGroupStyle.showListOfAllGroup}>
 						<Button
 							title="handle_group"
 							onPress={this._onPressButton}
-							style={[HandleEventStyle.footerButton, HandleEventStyle.footerButtonGroup]}
+							style={[MainGroupStyle.footerButton, MainGroupStyle.footerButtonGroup]}
 							textStyle={CommonTheme.footerText}>
 							Create/Join Group
 						</Button>
+					</View>
+					<View style={MainGroupStyle.joinOldOrById}>
 						<Button
 							title="buy_ticket"
 							onPress={this._onPressButton}
-							style={[HandleEventStyle.footerButton, HandleEventStyle.footerButtonTicket]}
+							style={[MainGroupStyle.footerButton, MainGroupStyle.footerButtonTicket]}
 							textStyle={CommonTheme.footerText}>
 							Ticket
 						</Button>
+					</View>
+						<View style={MainGroupStyle.createNewOne}>
 						<Button
 							title="back_to_event"
 							onPress={() => this.props.navigation.goBack()}
-							style={[HandleEventStyle.footerButton, HandleEventStyle.footerButtonBack]}
+							style={[MainGroupStyle.footerButton, MainGroupStyle.footerButtonBack]}
 							textStyle={CommonTheme.footerText}>
 							Go Back to the event page
 						</Button>
+						</View>
 				</View>
 			</View>
 		);
 	}
 }
 
-AppRegistry.registerComponent('HandleEventScreen', () => HandleEventScreen);
+AppRegistry.registerComponent('MainGroupScreen', () => MainGroupScreen);
