@@ -23,16 +23,6 @@ export const TabNav = TabNavigator({
 });*/
 export const Stack = StackNavigator({
 
-		HandleEvent: {
-			screen: HandleEventScreen,
-			navigationOptions: {
-				title: 'WeLoveIt - Handle the fun',
-				headerTintColor: '#ccff90',
-				headerStyle: {
-					backgroundColor : '#424242',
-				},
-			},
-		},
 		Home: {
 			screen: HomeScreen,
 			navigationOptions: {
@@ -61,6 +51,16 @@ export const Stack = StackNavigator({
 					backgroundColor : '#424242'
 				},
 				// headerRight: <Button title="Info" />,
+			},
+		},
+		HandleEvent: {
+			screen: HandleEventScreen,
+			navigationOptions: {
+				title: 'WeLoveIt - Handle the fun',
+				headerTintColor: '#ccff90',
+				headerStyle: {
+					backgroundColor : '#424242',
+				},
 			},
 		},
 	}

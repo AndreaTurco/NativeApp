@@ -84,7 +84,7 @@ export default class EventScreen extends Component {
 				<View style={styles.footer}>
 					<View style={styles.footerButtonContainer}>
 						<Button
-							onPress={this.handleEvent()}
+							onPress={this.handleEvent}
 							style={[CommonTheme.footerButton, styles.footerEventButton, CommonTheme.yellowButton]}
 							textStyle={CommonTheme.footerText}>
 							Book Event

@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {
 	AppRegistry,
-	StyleSheet,
 	Text,
 	View,
 	Image,
@@ -22,15 +21,6 @@ export default class HandleEventScreen extends Component {
 			Alert.alert("go to login page")
 		}
 	}
-
-	handleEvent = () => {
-
-	};
-
-	nextEvent = () => {
-		let index = this.state._index + 1;
-		this.props.navigation.navigate('Event', {indexEventToShow: index});
-	};
 
 	constructor(props) {
 		super(props);
@@ -104,7 +94,7 @@ export default class HandleEventScreen extends Component {
 						</Button>
 						<Button
 							title="back_to_event"
-							onPress={() => this.navigation.goBack()}
+							onPress={() => this.props.navigation.goBack()}
 							style={[HandleEventStyle.footerButton, HandleEventStyle.footerButtonBack]}
 							textStyle={CommonTheme.footerText}>
 							Go Back to the event page
