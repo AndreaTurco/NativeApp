@@ -1,6 +1,7 @@
 {
   "Events": [
     {
+      "id" : "1",
       "name": "TommyVee at Uno",
       "date": "19/07/2017",
       "description": "1st european date",
@@ -15,9 +16,62 @@
       "videoUrl": "",
       "uploaded": "15/06/2017",
       "updated": "15/06/2017",
-      "status": "1",
+      "status": "active",
       "ticketUrl": "",
-      "groups_id_list":"",
+      "groups_list": [
+        {
+          "id": "DSF456YTH4K",
+          "admins_list": [
+            89,
+            64,
+            29
+          ],
+          "created_at": "",
+          "updated_at": "",
+          "userId_list": [
+            1,
+            2,
+            3,
+            8,
+            88,
+            79,
+            789,
+            15885,
+            7777
+          ],
+          "name": "stuff",
+          "description": "",
+          "status": "active",
+          "starred": 5,
+          "chat_reference": "4577887990"
+        },
+        {
+          "id": "DSF456YTHGK",
+          "admins_list": [
+            89,
+            64,
+            29
+          ],
+          "created_at": "",
+          "updated_at": "",
+          "userId_list": [
+            1,
+            2,
+            3,
+            8,
+            88,
+            79,
+            789,
+            15885,
+            7777
+          ],
+          "name": "ytrutyu",
+          "description": "",
+          "status": "active",
+          "starred": 5,
+          "chat_reference": "4577887990"
+        }
+      ],
       "artists": [
         {
           "name": "TommyVee",
@@ -32,6 +86,7 @@
       ]
     },
     {
+      "id" : "2",
       "name": "Christian Marchi at Uno",
       "date": "12/07/2017",
       "description": "!st european date",
@@ -46,9 +101,140 @@
       "videoUrl": "",
       "uploaded": "15/06/2017",
       "updated": "15/06/2017",
-      "status": "1",
+      "status": "active",
       "ticketUrl": "",
-      "groups_id_list":"",
+      "groups_list": [
+        {
+          "id": "YKUDESWEYT",
+          "admins_list": [
+            89,
+            64,
+            29
+          ],
+          "created_at": "",
+          "updated_at": "",
+          "userId_list": [
+            1,
+            2,
+            3,
+            8,
+            88,
+            79,
+            789,
+            15885,
+            7777
+          ],
+          "name": "stuff",
+          "description": "",
+          "status": "active",
+          "starred": 5,
+          "chat_reference": "4577887990"
+        },
+        {
+          "id": "GFHFGHL65456A",
+          "admins_list": [
+            89,
+            64,
+            29
+          ],
+          "created_at": "",
+          "updated_at": "",
+          "userId_list": [
+            1,
+            2,
+            3,
+            8,
+            88,
+            79,
+            789,
+            15885,
+            7777
+          ],
+          "name": "ytrutyu",
+          "description": "",
+          "status": "active",
+          "starred": 5,
+          "chat_reference": "4577887990"
+        },
+        {
+          "id": "GSERTWS4E56FJGH",
+          "admins_list": [
+            89,
+            64,
+            29
+          ],
+          "created_at": "",
+          "updated_at": "",
+          "userId_list": [
+            1,
+            2,
+            3,
+            8,
+            88,
+            79,
+            789,
+            15885,
+            7777
+          ],
+          "name": "jgh ghjfghj",
+          "description": "",
+          "status": "active",
+          "starred": 5,
+          "chat_reference": "4577887990"
+        },
+        {
+          "id": "ERGR645UMNCVBNN",
+          "admins_list": [
+            89,
+            64,
+            29
+          ],
+          "created_at": "",
+          "updated_at": "",
+          "userId_list": [
+            1,
+            2,
+            3,
+            8,
+            88,
+            79,
+            789,
+            15885,
+            7777
+          ],
+          "name": "ytrutyu",
+          "description": "",
+          "status": "active",
+          "starred": 5,
+          "chat_reference": "4577887990"
+        },
+        {
+          "id": "SDGHSR5Y3756HGF",
+          "admins_list": [
+            89,
+            64,
+            29
+          ],
+          "created_at": "",
+          "updated_at": "",
+          "userId_list": [
+            1,
+            2,
+            3,
+            8,
+            88,
+            79,
+            789,
+            15885,
+            7777
+          ],
+          "name": "jgh ghjfghj",
+          "description": "",
+          "status": "active",
+          "starred": 5,
+          "chat_reference": "4577887990"
+        }
+      ],
       "artists": [
         {
           "name": "Christian Marchi ",

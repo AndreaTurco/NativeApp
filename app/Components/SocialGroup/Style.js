@@ -11,7 +11,8 @@ const MainGroupStyle = StyleSheet.create({
 		flex: 4,
 		alignSelf: 'stretch',
 		paddingHorizontal: 25,
-		justifyContent: 'flex-end',
+		justifyContent: 'space-between',
+		alignItems: 'stretch',
 	},
 
 	eventDetails: {
@@ -27,7 +28,7 @@ const MainGroupStyle = StyleSheet.create({
 	},
 	roundWrapper : {
 		flex: 1,
-		paddingLeft: 5,
+		paddingLeft: 15,
 	},
 	imageWrapper: {
 		// marginLeft: 15,
@@ -56,6 +57,16 @@ const MainGroupStyle = StyleSheet.create({
 		textAlign: 'left',
 		fontSize: 14,
 		marginBottom: 8,
+	},
+
+	showListOfAllGroup : {
+
+	},
+	joinOldOrById : {
+
+	},
+	createNewOne : {
+
 	},
 
 	footerButton: {

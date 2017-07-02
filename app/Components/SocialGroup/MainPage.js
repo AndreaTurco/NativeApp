@@ -7,8 +7,11 @@ import {
 	Alert,
 	ToastAndroid,
 	Platform,
-	ListView
+	ListView,
+	FlatList,
+	ActivityIndicator
 } from 'react-native';
+import {List, ListItem, SearchBar } from 'react-native-elements'
 import Button from 'apsl-react-native-button';
 import MainGroupStyle from './Style';
 import CommonTheme from '../../Theme/Common';
@@ -27,6 +30,12 @@ export default class MainGroupScreen extends Component {
 		const _eventData = require('../../Fixture/Events.json');
 		const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
 		this.state = {
+			loading : false,
+			data: _eventData,
+			page: 1,
+			seed: 1,
+			error : null,
+			refreshing: false,
 			dataSource: ds.cloneWithRows(_eventData),
 			_index: typeof props.navigation.state.params !== 'undefined' ? props.navigation.state.params.indexEventToShow : 0
 		};
@@ -57,8 +66,34 @@ export default class MainGroupScreen extends Component {
 		)
 	}
 
+	state = {selected: (new Map(): Map<string, boolean>)};
+
+	_keyExtractor = (item, index) => item.id;
+
+	_onPressItem = (id: string) => {
+		// updater functions are preferred for transactional updates
+		this.setState((state) => {
+			// copy the map rather than modifying state.
+			const selected = new Map(state.selected);
+			selected.set(id, !selected.get(id)); // toggle
+			return {selected};
+		});
+	};
+
+	_renderItem = ({item}) => (
+		<ListItem
+			id={item.id}
+			onPressItem={this._onPressItem}
+			// selected={!!this.state.selected.get(item.id)}
+			title={item.name}
+		/>
+	);
+
+	renderHeader = () => {
+		return <SearchBar placeholder="Type here..." lightTheme round/>;
+	};
+
 	render() {
-		// const index = this.props.navigation.state.params.indexEventToShow || 0;
 		return (
 			<View style={CommonTheme.container}>
 				{/*info evento*/}
@@ -70,16 +105,19 @@ export default class MainGroupScreen extends Component {
 				</View>
 				{/*wrapper tasti*/}
 				<View style={MainGroupStyle.footer}>
-					<View style={MainGroupStyle.showListOfAllGroup}>
-						<Button
-							title="handle_group"
-							onPress={this._onPressButton}
-							style={[MainGroupStyle.footerButton, MainGroupStyle.footerButtonGroup]}
-							textStyle={CommonTheme.footerText}>
-							Create/Join Group
-						</Button>
+					<View style={[MainGroupStyle.showListOfAllGroup, CommonTheme.borderTest]}>
+						<List>
+						<FlatList
+							data={this.state.data.Events[this.state._index].groups_list}
+							extraData={this.state}
+							keyExtractor={this._keyExtractor}
+							renderItem={this._renderItem}
+						  // ListHeaderComponent={this.renderHeader}
+						  // ListFooterComponent={this.renderFooter}
+						/>
+						</List>
 					</View>
-					<View style={MainGroupStyle.joinOldOrById}>
+					<View style={[MainGroupStyle.joinOldOrById, CommonTheme.borderTest]}>
 						<Button
 							title="buy_ticket"
 							onPress={this._onPressButton}
@@ -88,7 +126,7 @@ export default class MainGroupScreen extends Component {
 							Ticket
 						</Button>
 					</View>
-						<View style={MainGroupStyle.createNewOne}>
+						<View style={[MainGroupStyle.createNewOne, CommonTheme.borderTest]}>
 						<Button
 							title="back_to_event"
 							onPress={() => this.props.navigation.goBack()}

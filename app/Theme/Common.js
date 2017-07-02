@@ -25,6 +25,11 @@ const CommonTheme = StyleSheet.create({
 		backgroundColor: '#b0ff57',
 		// backgroundColor: '#bcff00',
 	},
+
+	borderTest : {
+		borderWidth: 2,
+		borderColor:'green'
+	}
 });
 
 export default CommonTheme;
