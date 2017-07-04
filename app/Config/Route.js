@@ -23,17 +23,6 @@ export const TabNav = TabNavigator({
 	},
 });*/
 export const Stack = StackNavigator({
-
-		MainGroupPage: {
-			screen: MainGroupScreen,
-			navigationOptions: {
-				title: 'WeLoveIt - Be Social',
-				headerTintColor: '#ccff90',
-				headerStyle: {
-					backgroundColor : '#424242',
-				},
-			},
-		},
 		Home: {
 			screen: HomeScreen,
 			navigationOptions: {
@@ -68,6 +57,16 @@ export const Stack = StackNavigator({
 			screen: HandleEventScreen,
 			navigationOptions: {
 				title: 'WeLoveIt - Handle the fun',
+				headerTintColor: '#ccff90',
+				headerStyle: {
+					backgroundColor : '#424242',
+				},
+			},
+		},
+		MainGroupPage: {
+			screen: MainGroupScreen,
+			navigationOptions: {
+				title: 'WeLoveIt - Be Social',
 				headerTintColor: '#ccff90',
 				headerStyle: {
 					backgroundColor : '#424242',

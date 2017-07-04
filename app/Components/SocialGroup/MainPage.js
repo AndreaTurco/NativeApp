@@ -11,7 +11,7 @@ import {
 	FlatList,
 	ActivityIndicator
 } from 'react-native';
-import {List, ListItem, SearchBar } from 'react-native-elements'
+import {List, ListItem, SearchBar, Icon } from 'react-native-elements'
 import Button from 'apsl-react-native-button';
 import MainGroupStyle from './Style';
 import CommonTheme from '../../Theme/Common';
@@ -85,7 +85,12 @@ export default class MainGroupScreen extends Component {
 			id={item.id}
 			onPressItem={this._onPressItem}
 			// selected={!!this.state.selected.get(item.id)}
+			containerStyle={{backgroundColor : '#515151'}}
+			titleStyle={{color : '#ffffff'}}
 			title={item.name}
+			badge={{ value: item.userId_list.length, textStyle: { color: 'black' }, containerStyle: { marginTop: 5, backgroundColor: '#b2ff59'} }}
+			// rightIcon={{name: ''}}
+			hideChevron={true}
 		/>
 	);
 
@@ -105,8 +110,9 @@ export default class MainGroupScreen extends Component {
 				</View>
 				{/*wrapper tasti*/}
 				<View style={MainGroupStyle.footer}>
-					<View style={[MainGroupStyle.showListOfAllGroup, CommonTheme.borderTest]}>
+					<View style={[MainGroupStyle.showListOfAllGroup]}>
 						<List>
+							<Text>Joinable Groups List</Text>
 						<FlatList
 							data={this.state.data.Events[this.state._index].groups_list}
 							extraData={this.state}
@@ -117,16 +123,16 @@ export default class MainGroupScreen extends Component {
 						/>
 						</List>
 					</View>
-					<View style={[MainGroupStyle.joinOldOrById, CommonTheme.borderTest]}>
+					<View style={[MainGroupStyle.joinOldOrById]}>
 						<Button
-							title="buy_ticket"
+							title="create_group"
 							onPress={this._onPressButton}
 							style={[MainGroupStyle.footerButton, MainGroupStyle.footerButtonTicket]}
 							textStyle={CommonTheme.footerText}>
-							Ticket
+							Create a New Group
 						</Button>
 					</View>
-						<View style={[MainGroupStyle.createNewOne, CommonTheme.borderTest]}>
+						<View style={[MainGroupStyle.createNewOne]}>
 						<Button
 							title="back_to_event"
 							onPress={() => this.props.navigation.goBack()}

@@ -79,7 +79,7 @@ export default class HandleEventScreen extends Component {
 				<View style={HandleEventStyle.footer}>
 						<Button
 							title="handle_group"
-							onPress={this._onPressButton}
+							onPress={() => this.props.navigation.navigate('MainGroupPage', {indexEventToShow: this.state._index})}
 							style={[HandleEventStyle.footerButton, HandleEventStyle.footerButtonGroup]}
 							textStyle={CommonTheme.footerText}>
 							Create/Join Group
