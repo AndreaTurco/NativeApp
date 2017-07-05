@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 import Button from 'apsl-react-native-button';
 import HandleEventStyle from './Style';
+import EventShortDescr from '../SocialGroup/EventShortDescr';
 import CommonTheme from '../../Theme/Common';
 
 export default class HandleEventScreen extends Component {
@@ -28,40 +29,12 @@ export default class HandleEventScreen extends Component {
 		 eventShowed: props.navigation.state.params.indexEventToShow ,
 		 };*/
 		const _eventData = require('../../Fixture/Events.json');
-		const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
 		this.state = {
-			dataSource: ds.cloneWithRows(_eventData),
+			data: _eventData,
 			_index: typeof props.navigation.state.params !== 'undefined' ? props.navigation.state.params.indexEventToShow : 0
 		};
 	}
 
-
-	renderRow(rowData) {
-		const _indexEvent = this.state._index >= rowData.length ? rowData.length - 1 : this.state._index;
-		let fullImage = {uri: rowData[_indexEvent].imgUrl};
-		// const _url = require("'"+rowData[_indexEvent].imgUrl+"'");
-		return (
-
-			<View style={HandleEventStyle.eventDetails}>
-				<View style={HandleEventStyle.header}>
-					<View style={HandleEventStyle.roundWrapper}>
-						<Image
-							style={HandleEventStyle.imageWrapper}
-							source={fullImage}
-						/>
-					</View>
-					<View style={HandleEventStyle.event_description}>
-						<Text style={HandleEventStyle.boldEventName}>{rowData[_indexEvent].name}</Text>
-						<Text style={HandleEventStyle.eventDescription}>{rowData[_indexEvent].description}</Text>
-						<Text style={HandleEventStyle.eventDescription}>{rowData[_indexEvent].date}
-							- {rowData[_indexEvent].location}</Text>
-						<Text style={HandleEventStyle.eventDescription}>{rowData[_indexEvent].country}
-							- {rowData[_indexEvent].city}</Text>
-					</View>
-				</View>
-			</View>
-		)
-	}
 
 	render() {
 		// const index = this.props.navigation.state.params.indexEventToShow || 0;
@@ -70,9 +43,9 @@ export default class HandleEventScreen extends Component {
 			<View style={CommonTheme.container}>
 				{/*info evento*/}
 				<View style={HandleEventStyle.mainSection}>
-					<ListView
-						dataSource={this.state.dataSource}
-						renderRow={this.renderRow.bind(this)}
+					<EventShortDescr
+						indexEventToShow={this.state._index}
+						eventData={this.state.data}
 					/>
 				</View>
 				{/*wrapper tasti*/}

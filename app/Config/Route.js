@@ -24,10 +24,10 @@ export const TabNav = TabNavigator({
 	},
 });*/
 export const Stack = StackNavigator({
-		MainGroupPage: {
-			screen: MainGroupScreen,
+		CreateGroup: {
+			screen: CreateGroupScreen,
 			navigationOptions: {
-				title: 'WeLoveIt - Be Social',
+				title: 'WeLoveIt - Begin to Be Social',
 				headerTintColor: '#ccff90',
 				headerStyle: {
 					backgroundColor : '#424242',
@@ -75,10 +75,10 @@ export const Stack = StackNavigator({
 			},
 		},
 
-		CreateGroup: {
-			screen: CreateGroupScreen,
+		MainGroupPage: {
+			screen: MainGroupScreen,
 			navigationOptions: {
-				title: 'WeLoveIt - Begin to Be Social',
+				title: 'WeLoveIt - Be Social',
 				headerTintColor: '#ccff90',
 				headerStyle: {
 					backgroundColor : '#424242',
