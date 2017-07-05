@@ -8,6 +8,7 @@ import LoginScreen        from '../Components/Login/Login';
 import EventScreen        from '../Components/Event/Event';
 import HandleEventScreen  from '../Components/HandleEvent/HandleEvent';
 import MainGroupScreen    from '../Components/SocialGroup/MainPage';
+import CreateGroupScreen  from '../Components/SocialGroup/CreateGroup';
 /*
 export const TabNav = TabNavigator({
 	Event: {
@@ -23,6 +24,16 @@ export const TabNav = TabNavigator({
 	},
 });*/
 export const Stack = StackNavigator({
+		MainGroupPage: {
+			screen: MainGroupScreen,
+			navigationOptions: {
+				title: 'WeLoveIt - Be Social',
+				headerTintColor: '#ccff90',
+				headerStyle: {
+					backgroundColor : '#424242',
+				},
+			},
+		},
 		Home: {
 			screen: HomeScreen,
 			navigationOptions: {
@@ -63,10 +74,11 @@ export const Stack = StackNavigator({
 				},
 			},
 		},
-		MainGroupPage: {
-			screen: MainGroupScreen,
+
+		CreateGroup: {
+			screen: CreateGroupScreen,
 			navigationOptions: {
-				title: 'WeLoveIt - Be Social',
+				title: 'WeLoveIt - Begin to Be Social',
 				headerTintColor: '#ccff90',
 				headerStyle: {
 					backgroundColor : '#424242',

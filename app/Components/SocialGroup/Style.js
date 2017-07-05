@@ -26,7 +26,7 @@ const MainGroupStyle = StyleSheet.create({
 		marginBottom: 20,
 		flexDirection: 'row'
 	},
-	roundWrapper : {
+	roundWrapper: {
 		flex: 1,
 		paddingLeft: 15,
 	},
@@ -38,7 +38,7 @@ const MainGroupStyle = StyleSheet.create({
 		borderWidth: 1,
 		borderColor: '#76ff03'
 	},
-	event_description : {
+	event_description: {
 		flex: 3,
 		paddingHorizontal: 10,
 		paddingLeft: 20,
@@ -59,15 +59,9 @@ const MainGroupStyle = StyleSheet.create({
 		marginBottom: 8,
 	},
 
-	showListOfAllGroup : {
-
-	},
-	joinOldOrById : {
-
-	},
-	createNewOne : {
-
-	},
+	showListOfAllGroup: {},
+	joinOldOrById: {},
+	createNewOne: {},
 
 	footerButton: {
 		backgroundColor: '#cfcfcf',
@@ -87,7 +81,7 @@ const MainGroupStyle = StyleSheet.create({
 	footerButtonTicket: {
 		backgroundColor: '#b2ff59',
 	},
-	footerText:{
+	footerText: {
 		fontSize: 18,
 		color: '#000'
 	},
