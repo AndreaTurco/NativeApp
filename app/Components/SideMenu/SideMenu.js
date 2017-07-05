@@ -1,6 +1,11 @@
-import React from 'react';
-import {Component} from 'react-navigation';
-import {SideMenu, List, ListItem} from 'react-native-elements';
+import React, {Component} from 'react';
+import {
+	AppRegistry,
+	View,
+	Text,
+	Button
+} from 'react-native';
+import {SideMenu, List, ListItem, Icon} from 'react-native-elements';
 export default class SideMenuClass extends Component {
 
 	constructor(props) {
@@ -8,7 +13,7 @@ export default class SideMenuClass extends Component {
 		this.state = {
 			isOpen: false
 		};
-		// this.toggleSideMenu = this.toggleSideMenu.bind(this);
+		this.toggleSideMenu = this.toggleSideMenu.bind(this);
 	}
 
 	onSideMenuChange(isOpen: boolean) {
@@ -26,20 +31,7 @@ export default class SideMenuClass extends Component {
 	render() {
 		const MenuComponent = (
 			<View style={{flex: 1, backgroundColor: '#ededed', paddingTop: 50}}>
-				<List containerStyle={{marginBottom: 20}}>
-					{
-						list.map((l, i) => (
-							<ListItem
-								roundAvatar
-								onPress={() => console.log('Pressed')}
-								avatar={l.avatar_url}
-								key={i}
-								title={l.name}
-								subtitle={l.subtitle}
-							/>
-						))
-					}
-				</List>
+				<Text>1point</Text>
 			</View>
 		);
 
@@ -48,7 +40,7 @@ export default class SideMenuClass extends Component {
 				isOpen={this.state.isOpen}
 				onChange={this.onSideMenuChange.bind(this)}
 				menu={MenuComponent}>
-				<App toggleSideMenu={this.toggleSideMenu.bind(this)}/>
+				<Text toggleSideMenu={this.toggleSideMenu.bind(this)}/>
 			</SideMenu>
 		);
 	}

@@ -3,7 +3,7 @@ import {StackNavigator, TabNavigator} from 'react-navigation';
 import {Button} from 'react-native';
 // import { Icon } from 'react-native-elements';
 
-// import SideMenuClass         from '../Components/SideMenu/SideMenu';
+import SideMenuClass      from '../Components/SideMenu/SideMenu';
 import HomeScreen         from '../Components/Index/Index';
 import LoginScreen        from '../Components/Login/Login';
 import EventScreen        from '../Components/Event/Event';
@@ -33,6 +33,7 @@ export const Stack = StackNavigator({
 				headerStyle: {
 					backgroundColor: '#424242',
 				},
+				headerRight :<SideMenuClass/>
 			},
 		},
 		Home: {
