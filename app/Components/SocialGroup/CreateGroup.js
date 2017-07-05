@@ -7,7 +7,7 @@ import {
 	ListView,
 } from 'react-native';
 import Button from 'apsl-react-native-button';
-import {SocialIcon} from 'react-native-elements';
+import {Icon , SocialIcon} from 'react-native-elements';
 
 import MainGroupStyle from './Style';
 import EventShortDescr from './EventShortDescr';
@@ -51,21 +51,21 @@ export default class CreateGroupScreen extends Component {
 						<Button
 							title="go_to_chat"
 							onPress={() => this.props.navigation.navigate('CreateGroup', {indexEventToShow: this.state._index})}
-							style={[MainGroupStyle.footerButton, MainGroupStyle.footerButtonTicket]}
+							style={[MainGroupStyle.footerButton, MainGroupStyle.footerButtonGroup]}
 							textStyle={CommonTheme.footerText}>
 							Open Chat
 						</Button>
 						<Button
 							title="group_info"
 							onPress={() => this.props.navigation.navigate('CreateGroup', {indexEventToShow: this.state._index})}
-							style={[MainGroupStyle.footerButton, MainGroupStyle.footerButtonTicket]}
+							style={[MainGroupStyle.footerButton, MainGroupStyle.footerButtonGroup]}
 							textStyle={CommonTheme.footerText}>
 							Group Info
 						</Button>
 						<Button
 							title="communication"
 							onPress={() => this.props.navigation.navigate('CreateGroup', {indexEventToShow: this.state._index})}
-							style={[MainGroupStyle.footerButton, MainGroupStyle.footerButtonTicket]}
+							style={[MainGroupStyle.footerButton, MainGroupStyle.footerButtonGroup]}
 							textStyle={CommonTheme.footerText}>
 							Communication
 						</Button>
