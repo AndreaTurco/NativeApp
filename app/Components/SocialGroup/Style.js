@@ -63,6 +63,15 @@ const MainGroupStyle = StyleSheet.create({
 	joinOldOrById: {},
 	createNewOne: {},
 
+	shareFunTitle : {
+		textAlign: 'center',
+		color: 'white'
+	},
+	inviteButton: {
+		flexDirection: 'row',
+		justifyContent: 'center',
+	},
+
 	footerButton: {
 		backgroundColor: '#cfcfcf',
 		// backgroundColor: '#f3e5f5',

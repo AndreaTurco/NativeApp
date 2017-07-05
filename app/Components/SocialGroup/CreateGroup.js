@@ -7,7 +7,7 @@ import {
 	ListView,
 } from 'react-native';
 import Button from 'apsl-react-native-button';
-import { SocialIcon } from 'react-native-elements';
+import {SocialIcon} from 'react-native-elements';
 
 import MainGroupStyle from './Style';
 import EventShortDescr from './EventShortDescr';
@@ -36,28 +36,38 @@ export default class CreateGroupScreen extends Component {
 				</View>
 				{/*wrapper tasti*/}
 				<View style={[MainGroupStyle.footer, CommonTheme.borderTest]}>
-					<View style={[MainGroupStyle.inviteButton, CommonTheme.borderTest]}>
-						<SocialIcon
-							light
-							raised={false}
-							type='twitter'
-						/><SocialIcon
-						light
-						raised={false}
-						type='facebook'
-					/><SocialIcon
-						light
-						raised={false}
-						type='instagram'
-					/>
+					<View style={[CommonTheme.borderTest]}>
+						<Text style={MainGroupStyle.shareFunTitle}>
+							Share the fun
+						</Text>
+						<View style={[MainGroupStyle.inviteButton, CommonTheme.borderTest]}>
+							<SocialIcon type='twitter'/>
+							<SocialIcon type='facebook'/>
+							<SocialIcon type='instagram'/>
+						</View>
+
 					</View>
 					<View style={[MainGroupStyle.actions, CommonTheme.borderTest]}>
 						<Button
-							title="create_group"
-							onPress={() => this.props.navigation.navigate('CreateGroup', {indexEventToShow : this.state._index})}
+							title="go_to_chat"
+							onPress={() => this.props.navigation.navigate('CreateGroup', {indexEventToShow: this.state._index})}
 							style={[MainGroupStyle.footerButton, MainGroupStyle.footerButtonTicket]}
 							textStyle={CommonTheme.footerText}>
-							Create a New Group
+							Open Chat
+						</Button>
+						<Button
+							title="group_info"
+							onPress={() => this.props.navigation.navigate('CreateGroup', {indexEventToShow: this.state._index})}
+							style={[MainGroupStyle.footerButton, MainGroupStyle.footerButtonTicket]}
+							textStyle={CommonTheme.footerText}>
+							Group Info
+						</Button>
+						<Button
+							title="communication"
+							onPress={() => this.props.navigation.navigate('CreateGroup', {indexEventToShow: this.state._index})}
+							style={[MainGroupStyle.footerButton, MainGroupStyle.footerButtonTicket]}
+							textStyle={CommonTheme.footerText}>
+							Communication
 						</Button>
 					</View>
 					<View style={[MainGroupStyle.createNewOne, CommonTheme.borderTest]}>
