@@ -1,9 +1,9 @@
 import React from 'react';
-import {StackNavigator, TabNavigator} from 'react-navigation';
+import {StackNavigator, TabNavigator, DrawerNavigator, DrawerItems} from 'react-navigation';
 import {Button} from 'react-native';
 // import { Icon } from 'react-native-elements';
 
-import SideMenuClass      from '../Components/SideMenu/SideMenu';
+import LateralMenu        from '../Components/SideMenu/LateralMenu';
 import HomeScreen         from '../Components/Index/Index';
 import LoginScreen        from '../Components/Login/Login';
 import EventScreen        from '../Components/Event/Event';
@@ -24,18 +24,38 @@ import CreateGroupScreen  from '../Components/SocialGroup/CreateGroup';
  },
  },
  });*/
+
+export const DrawerNav = DrawerNavigator({
+	MenuLateral: {
+		screen: LateralMenu,
+		navigationOptions: ({ navigation }) => ({
+			drawerWidth: 200,
+			drawerPosition: 'right',
+		})
+	},
+});
+
 export const Stack = StackNavigator({
 		CreateGroup: {
 			screen: CreateGroupScreen,
-			navigationOptions: {
+
+			navigationOptions: ({ navigation }) => ({
 				title: 'WeLoveIt - Begin to Be Social',
 				headerTintColor: '#ccff90',
 				headerStyle: {
 					backgroundColor: '#424242',
 				},
-				headerRight :<SideMenuClass/>
-			},
+				// headerRight: <Button
+				// 	title="Info"
+				// 	onPress={
+				// 		() => navigation.navigate('LeftTest')
+				// 	}
+				// />,
+			}),
 		},
+		// LeftTest: {
+		// 	screen: DrawerNav
+		// },
 		Home: {
 			screen: HomeScreen,
 			navigationOptions: {
@@ -93,6 +113,3 @@ export const Stack = StackNavigator({
 		headerMode: 'screen',
 	}
 );
-
-
-

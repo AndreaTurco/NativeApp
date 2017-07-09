@@ -30,7 +30,7 @@ export default class SideMenuClass extends Component {
 
 	render() {
 		const MenuComponent = (
-			<View style={{flex: 1, backgroundColor: '#ededed', paddingTop: 50}}>
+			<View style={{flex: 1, backgroundColor: '#ededed', paddingTop: 50, }}>
 				<Text>1point</Text>
 			</View>
 		);
@@ -38,9 +38,10 @@ export default class SideMenuClass extends Component {
 		return (
 			<SideMenu
 				isOpen={this.state.isOpen}
+				menuPosition={'right'}
 				onChange={this.onSideMenuChange.bind(this)}
 				menu={MenuComponent}>
-				<Text toggleSideMenu={this.toggleSideMenu.bind(this)}/>
+				<Text toggleSideMenu={this.toggleSideMenu.bind(this)}>asdsdas</Text>
 			</SideMenu>
 		);
 	}
