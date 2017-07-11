@@ -1,0 +1,87 @@
+[
+  {
+    "id": "0",
+    "name": "Disco",
+    "description": "Events to the disco",
+    "type": "NightEvent",
+    "eventsNum": "2",
+    "imgUrl": "https://placeimg.com/640/480/people?t=1498915655064",
+    "videoUrl": "",
+    "uploaded": "15/06/2017",
+    "updated": "15/06/2017",
+    "status": "active"
+  },
+  {
+    "id": "1",
+    "name": "Play soccer",
+    "description": "5 vs 5",
+    "type": "SportEvent",
+    "eventsNum": "2",
+    "imgUrl": "https://placeimg.com/640/480/people?t=1498915655064",
+    "videoUrl": "",
+    "uploaded": "15/06/2017",
+    "updated": "15/06/2017",
+    "status": "active"
+  },
+  {
+    "id": "2",
+    "name": "Cinema",
+    "description": "Organize a group for watch a movie",
+    "type": "EntertainmentEvent",
+    "eventsNum": "2",
+    "imgUrl": "https://placeimg.com/640/480/people?t=1498915655064",
+    "videoUrl": "",
+    "uploaded": "15/06/2017",
+    "updated": "15/06/2017",
+    "status": "active"
+  },
+  {
+    "id": "3",
+    "name": "Boat Trip",
+    "description": "Take a tour of the island",
+    "type": "EntertainmentEvent",
+    "eventsNum": "2",
+    "imgUrl": "https://placeimg.com/640/480/people?t=1498915655064",
+    "videoUrl": "",
+    "uploaded": "15/06/2017",
+    "updated": "15/06/2017",
+    "status": "active"
+  },
+  {
+    "id": "4",
+    "name": "BBQ on the sea front",
+    "description": "Share a night and a great meal",
+    "type": "EntertainmentEvent",
+    "eventsNum": "9",
+    "imgUrl": "https://placeimg.com/640/480/people?t=1498915655064",
+    "videoUrl": "",
+    "uploaded": "15/06/2017",
+    "updated": "15/06/2017",
+    "status": "active"
+  },
+  {
+    "id": "5",
+    "name": "Theater",
+    "description": "Observe the beauty of the art",
+    "type": "EntertainmentEvent",
+    "eventsNum": "4",
+    "imgUrl": "https://placeimg.com/640/480/people?t=1498915655064",
+    "videoUrl": "",
+    "uploaded": "15/06/2017",
+    "updated": "15/06/2017",
+    "status": "active"
+  },
+  {
+    "id": "6",
+    "name": "Tour of the city",
+    "description": "Learn the story of the city",
+    "type": "CulturalEvent",
+    "eventsNum": "1",
+    "imgUrl": "https://placeimg.com/640/480/people?t=1498915655064",
+    "videoUrl": "",
+    "uploaded": "15/06/2017",
+    "updated": "15/06/2017",
+    "status": "active"
+  }
+]
+

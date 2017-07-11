@@ -3,13 +3,14 @@ import {StackNavigator, TabNavigator, DrawerNavigator, DrawerItems} from 'react-
 import {Button} from 'react-native';
 // import { Icon } from 'react-native-elements';
 
-import LateralMenu        from '../Components/SideMenu/LateralMenu';
-import HomeScreen         from '../Components/Index/Index';
-import LoginScreen        from '../Components/Login/Login';
-import EventScreen        from '../Components/Event/Event';
-import HandleEventScreen  from '../Components/HandleEvent/HandleEvent';
-import MainGroupScreen    from '../Components/SocialGroup/MainPage';
-import CreateGroupScreen  from '../Components/SocialGroup/CreateGroup';
+// import LateralMenu        from '../Components/SideMenu/LateralMenu';
+import HomeScreen           from '../Components/Index/Index';
+import LoginScreen          from '../Components/Login/Login';
+import ChooseInterestScreen from '../Components/ChooseInterest/ChooseInterest';
+import EventScreen          from '../Components/Event/Event';
+import HandleEventScreen    from '../Components/HandleEvent/HandleEvent';
+import MainGroupScreen      from '../Components/SocialGroup/MainPage';
+import CreateGroupScreen    from '../Components/SocialGroup/CreateGroup';
 /*
  export const TabNav = TabNavigator({
  Event: {
@@ -23,7 +24,7 @@ import CreateGroupScreen  from '../Components/SocialGroup/CreateGroup';
  // headerRight: <Button title="Info" />,
  },
  },
- });*/
+ });
 
 export const DrawerNav = DrawerNavigator({
 	MenuLateral: {
@@ -35,27 +36,30 @@ export const DrawerNav = DrawerNavigator({
 	},
 });
 
-export const Stack = StackNavigator({
-		CreateGroup: {
-			screen: CreateGroupScreen,
+ // headerRight: <Button
+ // 	title="Info"
+ // 	onPress={
+ // 		() => navigation.navigate('LeftTest')
+ // 	}
+ // />,
 
-			navigationOptions: ({ navigation }) => ({
-				title: 'WeLoveIt - Begin to Be Social',
+ // LeftTest: {
+ // 	screen: DrawerNav
+ // },
+ */
+
+export const Stack = StackNavigator({
+		ChooseInterest: {
+			screen: ChooseInterestScreen,
+			navigationOptions: {
+				title: 'Choose the fun section',
 				headerTintColor: '#ccff90',
 				headerStyle: {
-					backgroundColor: '#424242',
+					backgroundColor: '#424242'
 				},
-				// headerRight: <Button
-				// 	title="Info"
-				// 	onPress={
-				// 		() => navigation.navigate('LeftTest')
-				// 	}
-				// />,
-			}),
+				// headerRight: <Button title="Info" />,
+			},
 		},
-		// LeftTest: {
-		// 	screen: DrawerNav
-		// },
 		Home: {
 			screen: HomeScreen,
 			navigationOptions: {
@@ -106,6 +110,16 @@ export const Stack = StackNavigator({
 					backgroundColor: '#424242',
 				},
 			},
+		},
+		CreateGroup: {
+			screen: CreateGroupScreen,
+			navigationOptions: ({ navigation }) => ({
+				title: 'WeLoveIt - Begin to Be Social',
+				headerTintColor: '#ccff90',
+				headerStyle: {
+					backgroundColor: '#424242',
+				},
+			}),
 		},
 	}
 	,
