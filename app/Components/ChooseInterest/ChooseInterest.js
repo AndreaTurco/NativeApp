@@ -31,7 +31,7 @@ export default class ChooseInterestScreen extends Component {
 		let fullImage = {uri: rowData.imgUrl};
 		// const _url = require("'"+rowData[_indexEvent].imgUrl+"'");
 		return (
-			<TouchableHighlight style={[CommonTheme.borderTest, CategoriesListStyle.singleWrapper]}>
+			<TouchableHighlight style={[CategoriesListStyle.singleWrapper,CommonTheme.borderTestYellow]}>
 				<View style={CategoriesListStyle.categoryDetails}>
 					<View style={CategoriesListStyle.iconWrapper}>
 						<Image
@@ -51,14 +51,14 @@ export default class ChooseInterestScreen extends Component {
 	render() {
 		return (
 			<ScrollView>
-				<View style={CommonTheme.container}>
+				<View style={CommonTheme.containerGrid}>
 					<View style={CategoriesListStyle.pageDescription}>
 						<Text style={{color: 'white'}}>List of all categories</Text>
 					</View>
 					{/*wrapper icons*/}
-					<View style={[CategoriesListStyle.listOfAllTheCategories]}>
+					<View style={[CommonTheme.borderTest,CategoriesListStyle.listOfAllTheCategories]}>
 						<ListView
-							style={CategoriesListStyle.listWrapper}
+							style={[CategoriesListStyle.listWrapper,CommonTheme.borderTestRed]}
 							dataSource={this.state.dataSource}
 							renderRow={this.renderRow.bind(this)}
 						/>

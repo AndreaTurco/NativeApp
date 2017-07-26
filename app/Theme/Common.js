@@ -9,6 +9,14 @@ const CommonTheme = StyleSheet.create({
 		// backgroundColor: '#707070',
 		// backgroundColor: '#6031b1',
 	},
+	containerGrid: {
+		// flex: 1,
+		justifyContent: 'flex-start',
+		alignItems: 'flex-start',
+		backgroundColor: '#424242',
+		// backgroundColor: '#707070',
+		// backgroundColor: '#6031b1',
+	},
 	footerButton: {
 		backgroundColor: '#cfcfcf',
 		// backgroundColor: '#f3e5f5',
@@ -29,6 +37,14 @@ const CommonTheme = StyleSheet.create({
 	borderTest : {
 		borderWidth: 2,
 		borderColor:'green'
+	},
+	borderTestRed : {
+		borderWidth: 2,
+		borderColor:'red'
+	},
+	borderTestYellow : {
+		borderWidth: 2,
+		borderColor:'yellow'
 	}
 });
 

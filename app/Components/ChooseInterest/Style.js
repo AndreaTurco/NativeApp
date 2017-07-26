@@ -3,23 +3,26 @@ import React, {StyleSheet} from 'react-native';
 const CategoriesListStyle = StyleSheet.create({
 
 	pageDescription: {
-		flex: 1,
-		justifyContent: 'center',
-		alignSelf: 'stretch',
+		// flex: 1,
+		// justifyContent: 'center',
+		// alignSelf: 'stretch',
 	},
 	listOfAllTheCategories: {
-		flex: 4,
-		alignSelf: 'stretch',
+		// flex: 1,
+		// alignSelf: 'stretch',
+		// flexDirection: 'row',
+		// flexWrap: 'wrap',
 	},
 	listWrapper: {
-		alignSelf: 'stretch',
 		flexDirection: 'row',
 		flexWrap: 'wrap',
+		alignSelf: 'stretch',
+		// flex: 1,
 	},
 
 	singleWrapper:{
-		width : 180,
-		flex: 1
+		width : 150,
+		// flex: 1
 	},
 	categoryDetails: {
 		justifyContent: 'center',
