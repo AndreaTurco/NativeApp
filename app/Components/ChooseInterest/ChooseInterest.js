@@ -31,7 +31,13 @@ export default class ChooseInterestScreen extends Component {
 		let fullImage = {uri: rowData.imgUrl};
 		// const _url = require("'"+rowData[_indexEvent].imgUrl+"'");
 		return (
-			<TouchableHighlight style={[CategoriesListStyle.singleWrapper]}>
+			<TouchableHighlight
+				style={[CategoriesListStyle.singleWrapper]}
+			  onPress = {() => {
+			  	//@todo set the correct link to the first/random event in the list
+				  this.props.navigation.navigate('Event',{indexEventToShow: 0});
+			  }}
+			>
 				<View style={CategoriesListStyle.categoryDetails}>
 					<View style={CategoriesListStyle.iconWrapper}>
 						<Image

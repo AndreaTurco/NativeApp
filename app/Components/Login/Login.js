@@ -30,7 +30,8 @@ export default class LoginScreen extends Component {
 	}
 
 	loginUser = () => {
-		this.props.navigation.navigate('Event',{indexEventToShow: 0});
+		this.props.navigation.navigate('ChooseInterest');
+		// this.props.navigation.navigate('Event',{indexEventToShow: 0});
 	};
 
 	constructor(props) {

@@ -49,10 +49,10 @@ export const DrawerNav = DrawerNavigator({
  */
 
 export const Stack = StackNavigator({
-		ChooseInterest: {
-			screen: ChooseInterestScreen,
+		Event: {
+			screen: EventScreen,
 			navigationOptions: {
-				title: 'Choose the fun section',
+				title: 'WeLoveIt',
 				headerTintColor: '#ccff90',
 				headerStyle: {
 					backgroundColor: '#424242'
@@ -76,13 +76,10 @@ export const Stack = StackNavigator({
 				}
 			},
 		},
-		/*		Event: {
-		 screen : TabNav
-		 }*/
-		Event: {
-			screen: EventScreen,
+		ChooseInterest: {
+			screen: ChooseInterestScreen,
 			navigationOptions: {
-				title: 'WeLoveIt',
+				title: 'Choose the fun section',
 				headerTintColor: '#ccff90',
 				headerStyle: {
 					backgroundColor: '#424242'
@@ -90,6 +87,10 @@ export const Stack = StackNavigator({
 				// headerRight: <Button title="Info" />,
 			},
 		},
+		/*		Event: {
+		 screen : TabNav
+		 }*/
+
 		HandleEvent: {
 			screen: HandleEventScreen,
 			navigationOptions: {
