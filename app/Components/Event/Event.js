@@ -8,9 +8,11 @@ import {
 	Alert,
 	ToastAndroid,
 	Platform,
-	ListView
+	ListView,
+	TouchableHighlight
 } from 'react-native';
 import Button from 'apsl-react-native-button';
+import Image_F_S from './ImageFullScreen';
 import CommonTheme from '../../Theme/Common';
 
 export default class EventScreen extends Component {
@@ -33,17 +35,20 @@ export default class EventScreen extends Component {
 
 	constructor(props) {
 		super(props);
-/*		this.state = {
-			eventShowed: props.navigation.state.params.indexEventToShow ,
-		};*/
+		/*		this.state = {
+		 eventShowed: props.navigation.state.params.indexEventToShow ,
+		 };*/
 		const _eventData = require('../../Fixture/Events.json');
 		const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
 		this.state = {
 			dataSource: ds.cloneWithRows(_eventData),
-			_index : typeof props.navigation.state.params !== 'undefined' ? props.navigation.state.params.indexEventToShow : 0
+			_index: typeof props.navigation.state.params !== 'undefined' ? props.navigation.state.params.indexEventToShow : 0
 		};
 	}
 
+	setModalVisible(visible) {
+		this.setState({modalVisible: visible});
+	}
 
 	renderRow(rowData) {
 		const _indexEvent = this.state._index >= rowData.length ? rowData.length - 1 : this.state._index;
@@ -53,10 +58,10 @@ export default class EventScreen extends Component {
 
 			<View style={styles.eventDetails}>
 				<View style={styles.header}>
-					<View style={styles.roundWrapper}>
-						<Image
-							style={styles.imageWrapper}
-							source={fullImage}
+					<View
+						style={styles.roundWrapper}>
+						<Image_F_S
+							imageSource={fullImage}
 						/>
 					</View>
 				</View>
@@ -151,7 +156,7 @@ const styles = StyleSheet.create({
 		},
 		footerEventButton: {
 			flex: 1,
-			margin : 5
+			margin: 5
 		},
 		welcome: {
 			fontSize: 48,

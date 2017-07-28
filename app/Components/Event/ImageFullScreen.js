@@ -5,16 +5,27 @@ import {
 	View,
 	Image,
 	Modal,
+	TouchableHighlight
 } from 'react-native';
 import CommonTheme from '../../Theme/Common';
 
 export default class Image_F_S extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			modalVisible: false,
+			imagePath : props.imageSource
+		};
+	}
 
+	setModalVisible(visible) {
+		this.setState({modalVisible: visible});
+	}
 
 	render() {
 		return (<View style={{marginTop: 22}}>
 				<Modal
-					animationType={"slide"}
+					animationType={"fade"}
 					transparent={false}
 					visible={this.state.modalVisible}
 					onRequestClose={() => {
@@ -23,12 +34,23 @@ export default class Image_F_S extends Component {
 				>
 					<View style={{marginTop: 22}}>
 						<View>
-							<Text>Hello World!</Text>
+							<Image
+								style={{
+									height : 300
+								}}
+								source={this.state.imagePath}
+							/>
 
 							<TouchableHighlight onPress={() => {
 								this.setModalVisible(!this.state.modalVisible)
 							}}>
-								<Text>Hide Modal</Text>
+								<Text
+									style={{
+										marginTop: 30,
+										fontSize: 30,
+										fontWeight: 'bold',
+									}}
+								>Back To Event</Text>
 							</TouchableHighlight>
 
 						</View>
@@ -38,7 +60,16 @@ export default class Image_F_S extends Component {
 				<TouchableHighlight onPress={() => {
 					this.setModalVisible(true)
 				}}>
-					<Text>Show Modal</Text>
+					<Image
+						style={{
+							height: 250,
+							borderRadius: 150,
+							width: 250,
+							borderWidth: 1,
+							borderColor: '#76ff03'
+						}}
+						source={this.state.imagePath}
+					/>
 				</TouchableHighlight>
 
 			</View>
