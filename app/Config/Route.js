@@ -49,17 +49,7 @@ export const DrawerNav = DrawerNavigator({
  */
 
 export const Stack = StackNavigator({
-		Event: {
-			screen: EventScreen,
-			navigationOptions: {
-				title: 'WeLoveIt',
-				headerTintColor: '#ccff90',
-				headerStyle: {
-					backgroundColor: '#424242'
-				},
-				// headerRight: <Button title="Info" />,
-			},
-		},
+
 		Home: {
 			screen: HomeScreen,
 			navigationOptions: {
@@ -90,7 +80,17 @@ export const Stack = StackNavigator({
 		/*		Event: {
 		 screen : TabNav
 		 }*/
-
+		Event: {
+			screen: EventScreen,
+			navigationOptions: {
+				title: 'WeLoveIt',
+				headerTintColor: '#ccff90',
+				headerStyle: {
+					backgroundColor: '#424242'
+				},
+				// headerRight: <Button title="Info" />,
+			},
+		},
 		HandleEvent: {
 			screen: HandleEventScreen,
 			navigationOptions: {

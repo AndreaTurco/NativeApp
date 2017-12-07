@@ -37,7 +37,7 @@ export default class HomeScreen extends Component {
 				<TouchableWithoutFeedback onPress={this._onPressButton}>
 					<View>
 						<Text style={styles.welcome}>
-							We Love It
+							JoyTrip
 						</Text>
 					</View>
 				</TouchableWithoutFeedback>
