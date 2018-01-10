@@ -3,7 +3,7 @@ import {
 	AppRegistry,
 	Text,
 	FlatList,
-	ActivityIndicator
+	ActivityIndicator, ToastAndroid, Alert, Platform
 } from 'react-native';
 import {List, ListItem, SearchBar, Icon} from 'react-native-elements'
 import MainGroupStyle from './Style';
@@ -33,10 +33,19 @@ export default class GroupsListElement extends Component {
 		});
 	};
 
+	_onPressButton = (id: string) => {
+		if (Platform.OS === 'android') {
+			ToastAndroid.showWithGravity('Open group Details' + id, ToastAndroid.SHORT, ToastAndroid.BOTTOM)
+		} else {
+			Alert.alert("go to login page")
+		}
+	};
+
+
 	_renderItem = ({item}) => (
 		<ListItem
 			id={item.id}
-			onPressItem={this._onPressItem}
+			onPressItem={this._onPressButton}
 			// selected={!!this.state.selected.get(item.id)}
 			containerStyle={{backgroundColor: '#515151'}}
 			titleStyle={{color: '#ffffff'}}
